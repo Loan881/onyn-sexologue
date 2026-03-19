@@ -190,7 +190,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* Placeholder visible tant qu'il n'y a pas d'image */
-.hero-img-bg:not([style*="url('votre-photo.jpg')"]) .hero-img-placeholder,
+.hero-img-bg:not([style*="url('cabinet2.jpeg')"]) .hero-img-placeholder,
 .hero-img-placeholder {
   position: absolute;
   inset: 0;
