@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sophie Martin — Psycho-Sexologue</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">Sophie Martin</div>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#services">Accompagnements</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#rdv" class="nav-cta">Prendre rendez-vous</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleMenu()">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMenu()">À propos</a>
+    <a href="#services" onclick="toggleMenu()">Accompagnements</a>
+    <a href="#tarifs" onclick="toggleMenu()">Tarifs</a>
+    <a href="#rdv" onclick="toggleMenu()">Prendre rendez-vous</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Psycho-Sexologue certifiée</span>
+      <h1 class="hero-title">Un espace pour<br /><em>vous retrouver</em></h1>
+      <p class="hero-sub">Accompagnement individuel, de couple et thérapeutique autour de la sexualité, de l'intimité et du bien-être émotionnel.</p>
+      <div class="hero-actions">
+        <a href="#rdv" class="btn-primary">Prendre rendez-vous</a>
+        <a href="#about" class="btn-secondary">En savoir plus</a>
+      </div>
+    </div>
+    <div class="hero-deco">
+      <div class="deco-circle c1"></div>
+      <div class="deco-circle c2"></div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-image-wrap">
+        <div class="about-image-placeholder">
+          <span>Votre photo ici</span>
+        </div>
+        <div class="about-badge">
+          <span class="badge-num">10+</span>
+          <span class="badge-txt">ans d'expérience</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">À propos</span>
+        <h2>Sophie Martin,<br /><em>à votre écoute</em></h2>
+        <p>Je suis psycho-sexologue diplômée, formée à la thérapie cognitivo-comportementale et à l'approche systémique de couple. Mon cabinet est un espace bienveillant, confidentiel et sans jugement.</p>
+        <p>Mon approche s'articule autour de l'écoute active et d'outils thérapeutiques adaptés à chaque situation. Que vous traversiez des difficultés relationnelles, des questionnements sur votre identité ou des troubles de la sexualité, je vous accompagne à votre rythme.</p>
+        <ul class="about-certifs">
+          <li>&#10003; &nbsp; Master en psychologie clinique</li>
+          <li>&#10003; &nbsp; Diplôme de sexologie clinique</li>
+          <li>&#10003; &nbsp; Membre de l'AIUS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <span class="section-label center">Accompagnements</span>
+      <h2 class="section-title center">Ce que je propose</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">&#9788;</div>
+          <h3>Suivi individuel</h3>
+          <p>Un espace pour explorer vos émotions, votre rapport à l'intime et à vous-même, à travers un accompagnement sur mesure.</p>
+        </div>
+
+        <div class="service-card featured">
+          <div class="service-icon">&#9774;</div>
+          <h3>Thérapie de couple</h3>
+          <p>Retrouver la communication, reconstruire l'intimité, traverser les crises — accompagnement des deux partenaires, ensemble ou séparément.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#10024;</div>
+          <h3>Sexologie clinique</h3>
+          <p>Troubles du désir, douleurs, difficultés érectiles, vaginisme… Prise en charge globale, bienveillante et professionnelle.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#9670;</div>
+          <h3>Identité & orientation</h3>
+          <p>Questionnements sur le genre, l'orientation sexuelle, la transition — un espace sûr pour explorer et s'affirmer.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#9728;</div>
+          <h3>Consultation en ligne</h3>
+          <p>Des séances par visioconférence accessibles depuis chez vous, avec la même qualité d'écoute et d'accompagnement.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#9825;</div>
+          <h3>Post-traumatique</h3>
+          <p>Accompagnement après des violences, abus ou traumatismes sexuels, dans un cadre sécurisé et spécialisé.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section class="tarifs" id="tarifs">
+    <div class="container">
+      <span class="section-label center">Tarifs</span>
+      <h2 class="section-title center">Transparence & accessibilité</h2>
+      <div class="tarifs-grid">
+
+        <div class="tarif-card">
+          <h3>Consultation individuelle</h3>
+          <div class="tarif-price">70 <span>€</span></div>
+          <div class="tarif-duree">50 minutes</div>
+          <ul>
+            <li>Présentiel ou visio</li>
+            <li>Premier entretien</li>
+            <li>Suivi régulier</li>
+          </ul>
+          <a href="#rdv" class="btn-primary">Réserver</a>
+        </div>
+
+        <div class="tarif-card featured">
+          <div class="tarif-badge">Le plus demandé</div>
+          <h3>Thérapie de couple</h3>
+          <div class="tarif-price">90 <span>€</span></div>
+          <div class="tarif-duree">75 minutes</div>
+          <ul>
+            <li>Les deux partenaires</li>
+            <li>Séances régulières</li>
+            <li>Bilan intermédiaire inclus</li>
+          </ul>
+          <a href="#rdv" class="btn-primary">Réserver</a>
+        </div>
+
+        <div class="tarif-card">
+          <h3>Consultation en ligne</h3>
+          <div class="tarif-price">60 <span>€</span></div>
+          <div class="tarif-duree">50 minutes</div>
+          <ul>
+            <li>Par visioconférence</li>
+            <li>Lien envoyé par email</li>
+            <li>Individuel uniquement</li>
+          </ul>
+          <a href="#rdv" class="btn-primary">Réserver</a>
+        </div>
+
+      </div>
+
+      <!-- PAIEMENT -->
+      <div class="paiement-box">
+        <div class="paiement-icon">&#128176;</div>
+        <div class="paiement-text">
+          <h4>Modalités de paiement</h4>
+          <p>Le règlement s'effectue par virement bancaire avant chaque séance. Coordonnées bancaires communiquées après confirmation du rendez-vous.</p>
+          <div class="rib-info">
+            <span class="rib-label">RIB</span>
+            <div class="rib-details">
+              <p><strong>Titulaire :</strong> MARTIN Sophie</p>
+              <p><strong>IBAN :</strong> FR76 XXXX XXXX XXXX XXXX XXXX XXX</p>
+              <p><strong>BIC :</strong> XXXXXXXX</p>
+            </div>
+          </div>
+          <p class="paiement-note">&#128274; &nbsp;Vos informations bancaires ne sont jamais partagées ni stockées par ce site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRISE DE RENDEZ-VOUS -->
+  <section class="rdv" id="rdv">
+    <div class="container">
+      <span class="section-label center">Rendez-vous</span>
+      <h2 class="section-title center">Réservez votre séance</h2>
+      <p class="rdv-intro">Remplissez le formulaire ci-dessous et je vous confirmerai votre créneau sous 24h par email ou téléphone.</p>
+
+      <form class="rdv-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" placeholder="Votre prénom" required />
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" placeholder="Votre nom" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" placeholder="votre@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" placeholder="+33 6 00 00 00 00" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="type">Type de consultation *</label>
+            <select id="type" required>
+              <option value="">— Choisissez —</option>
+              <option value="individuel">Consultation individuelle (70€)</option>
+              <option value="couple">Thérapie de couple (90€)</option>
+              <option value="enligne">Consultation en ligne (60€)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">Date souhaitée *</label>
+            <input type="date" id="date" required />
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="message">Message (optionnel)</label>
+          <textarea id="message" rows="4" placeholder="Décrivez brièvement votre demande si vous le souhaitez…"></textarea>
+        </div>
+        <div class="form-group full checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" required />
+            J'accepte que mes données soient utilisées uniquement pour la gestion de ce rendez-vous.
+          </label>
+        </div>
+        <button type="submit" class="btn-primary btn-large">Envoyer ma demande &#8594;</button>
+      </form>
+
+      <div class="rdv-confirm hidden" id="rdvConfirm">
+        <div class="confirm-icon">&#10003;</div>
+        <h3>Demande envoyée !</h3>
+        <p>Je vous recontacte sous 24h pour confirmer votre créneau et vous communiquer les informations de paiement.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Sophie Martin</div>
+        <p>Psycho-Sexologue certifiée<br />Cabinet à Paris & consultations en ligne</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="#about">À propos</a>
+        <a href="#services">Accompagnements</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#rdv">Rendez-vous</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>&#128205; &nbsp;Paris, 75001</p>
+        <p>&#128222; &nbsp;+33 6 00 00 00 00</p>
+        <p>&#128140; &nbsp;contact@sophiemartin.fr</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sophie Martin — Psycho-Sexologue. Tous droits réservés.</p>
+      <p>Confidentialité &middot; Mentions légales</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobileMenu');
+      m.classList.toggle('open');
+    }
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.querySelector('.rdv-form').classList.add('hidden');
+      document.getElementById('rdvConfirm').classList.remove('hidden');
+    }
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    // Navbar shadow on scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script>
+</body>
+</html>
