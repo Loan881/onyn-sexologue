@@ -169,32 +169,63 @@ img { max-width: 100%; display: block; }
 .mobile-menu a { text-decoration: none; color: var(--text); font-size: 1.05rem; padding: 8px 0; border-bottom: 1px solid var(--beige); }
 
 /* =============================================
-   HERO
+   HERO — IMAGE DE FOND
    ============================================= */
 .hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   position: relative;
   overflow: hidden;
   padding-top: 80px;
-  background: linear-gradient(135deg, var(--cream) 55%, #e8d9c8 100%);
 }
-.hero-bg {
+
+/* Côté image (droite) */
+.hero-img-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+/* Placeholder visible tant qu'il n'y a pas d'image */
+.hero-img-bg:not([style*="url('votre-photo.jpg')"]) .hero-img-placeholder,
+.hero-img-placeholder {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(200,169,110,.12) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(200,169,110,.08) 0%, transparent 60%);
-  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #e8d9c8, #d5c5b0);
+  color: var(--text-lt);
+  font-size: .85rem;
+  font-style: italic;
+  text-align: center;
+  padding: 32px;
+  border-left: 2px dashed rgba(200,169,110,.4);
 }
+.placeholder-icon { font-size: 2.5rem; }
+
+/* Quand une vraie image est chargée, masquer le placeholder */
+.hero-img-bg[style*="url('votre-photo.jpg')"] .hero-img-placeholder {
+  display: none;
+}
+
+/* Côté texte (gauche) */
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 620px;
-  padding: 80px 0 80px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 64px 80px 100px;
+  background: var(--cream);
   animation: fadeUp .9s ease both;
 }
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -211,7 +242,7 @@ img { max-width: 100%; display: block; }
 }
 .hero-title {
   font-family: var(--font-disp);
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: clamp(2.8rem, 5vw, 5rem);
   font-weight: 300;
   line-height: 1.05;
   color: var(--brown);
@@ -220,9 +251,9 @@ img { max-width: 100%; display: block; }
 }
 .hero-title em { font-style: italic; color: var(--gold-dk); }
 .hero-sub {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-lt);
-  max-width: 460px;
+  max-width: 400px;
   margin-bottom: 40px;
   line-height: 1.8;
   animation: fadeUp .9s .35s ease both;
@@ -233,28 +264,6 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap;
   animation: fadeUp .9s .45s ease both;
 }
-.hero-deco {
-  position: absolute;
-  right: -100px; top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-.deco-circle {
-  border-radius: 50%;
-  position: absolute;
-}
-.c1 {
-  width: 520px; height: 520px;
-  border: 1.5px solid rgba(200,169,110,.25);
-  top: -260px; left: -260px;
-  animation: spin 30s linear infinite;
-}
-.c2 {
-  width: 320px; height: 320px;
-  background: radial-gradient(ellipse, rgba(200,169,110,.10), transparent 70%);
-  top: -160px; left: -160px;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
 
 /* =============================================
    ABOUT
@@ -646,7 +655,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* =============================================
-   RESPONSIVE
+   RESPONSIVE — TABLETTE
    ============================================= */
 @media (max-width: 960px) {
   .navbar { padding: 16px 24px; }
@@ -654,10 +663,24 @@ img { max-width: 100%; display: block; }
   .nav-links { display: none; }
   .nav-burger { display: block; }
 
-  .hero-content { padding: 80px 24px; }
+  /* Hero en colonne sur tablette */
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh auto;
+    padding-top: 70px;
+  }
+  .hero-img-bg { order: 1; min-height: 60vw; }
+  .hero-content {
+    order: 2;
+    padding: 56px 40px;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-sub { max-width: 100%; }
+  .hero-actions { justify-content: center; }
 
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-image-placeholder { aspect-ratio: 3/2; }
+  .about-image-placeholder { aspect-ratio: 3/2; max-width: 400px; margin: 0 auto; }
   .about-badge { bottom: -16px; right: 0; }
 
   .services-grid { grid-template-columns: 1fr 1fr; }
@@ -672,12 +695,61 @@ img { max-width: 100%; display: block; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
 }
 
+/* =============================================
+   RESPONSIVE — MOBILE
+   ============================================= */
 @media (max-width: 600px) {
-  .container { padding: 0 20px; }
-  .hero-content { padding: 70px 20px; }
-  .hero-deco { display: none; }
+  :root { font-size: 15px; }
+
+  .container { padding: 0 18px; }
+
+  /* Navbar mobile */
+  .navbar { padding: 14px 18px; }
+  .nav-logo { font-size: 1.2rem; }
+
+  /* Hero mobile : image en haut, texte en bas */
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55vw auto;
+    padding-top: 62px;
+    min-height: auto;
+  }
+  .hero-img-bg { min-height: 55vw; }
+  .hero-content {
+    padding: 40px 18px 52px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero-title { font-size: 2.4rem; }
+  .hero-sub { font-size: .92rem; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary { text-align: center; width: 100%; }
+
+  /* About */
+  .about { padding: 72px 0; }
+  .about-image-placeholder { aspect-ratio: 4/3; max-width: 100%; }
+  .about-badge { position: static; margin-top: 16px; flex-direction: row; gap: 8px; border-radius: 50px; padding: 12px 20px; width: fit-content; }
+
+  /* Services */
+  .services { padding: 72px 0; }
   .services-grid { grid-template-columns: 1fr; }
-  .footer-inner { grid-template-columns: 1fr; }
-  .rdv-form { padding: 28px 20px; }
+  .service-card { padding: 28px 22px; }
+
+  /* Tarifs */
+  .tarifs { padding: 72px 0; }
   .tarifs-grid { max-width: 100%; }
+  .rib-info { flex-direction: column; gap: 10px; }
+
+  /* RDV */
+  .rdv { padding: 72px 0; }
+  .rdv-form { padding: 28px 18px; border-radius: 12px; }
+  .rdv-form .btn-primary { font-size: .9rem; padding: 16px 24px; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; padding: 48px 18px; }
+  .footer-bottom { padding: 18px; font-size: .72rem; }
+
+  /* Sections padding */
+  .section-title { margin-bottom: 32px; }
 }
