@@ -180,7 +180,7 @@ img { max-width: 100%; display: block; }
   padding-top: 80px;
 }
 
-/* Côté image (droite) */
+/* IMAGE (droite) */
 .hero-img-bg {
   position: relative;
   background-size: cover;
@@ -189,8 +189,15 @@ img { max-width: 100%; display: block; }
   min-height: 100%;
 }
 
-/* Placeholder visible tant qu'il n'y a pas d'image */
-.hero-img-bg:not([style*="url('cabinet2.jpeg')"]) .hero-img-placeholder,
+/* Overlay léger (optionnel mais pro) */
+.hero-img-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* PLACEHOLDER (visible uniquement si pas d'image inline) */
 .hero-img-placeholder {
   position: absolute;
   inset: 0;
@@ -207,14 +214,18 @@ img { max-width: 100%; display: block; }
   padding: 32px;
   border-left: 2px dashed rgba(200,169,110,.4);
 }
-.placeholder-icon { font-size: 2.5rem; }
 
-/* Quand une vraie image est chargée, masquer le placeholder */
-.hero-img-bg[style*="url('votre-photo.jpg')"] .hero-img-placeholder {
+.placeholder-icon {
+  font-size: 2.5rem;
+}
+
+/* ✅ CORRECTION PRINCIPALE */
+/* Cache le placeholder dès qu'une image est définie */
+.hero-img-bg[style*="background-image"] .hero-img-placeholder {
   display: none;
 }
 
-/* Côté texte (gauche) */
+/* TEXTE (gauche) */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -226,10 +237,12 @@ img { max-width: 100%; display: block; }
   animation: fadeUp .9s ease both;
 }
 
+/* ANIMATION */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
 .hero-eyebrow {
   display: block;
   font-size: .78rem;
@@ -240,6 +253,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 20px;
   animation: fadeUp .9s .1s ease both;
 }
+
 .hero-title {
   font-family: var(--font-disp);
   font-size: clamp(2.8rem, 5vw, 5rem);
@@ -249,7 +263,12 @@ img { max-width: 100%; display: block; }
   margin-bottom: 24px;
   animation: fadeUp .9s .2s ease both;
 }
-.hero-title em { font-style: italic; color: var(--gold-dk); }
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-dk);
+}
+
 .hero-sub {
   font-size: 1rem;
   color: var(--text-lt);
@@ -258,13 +277,13 @@ img { max-width: 100%; display: block; }
   line-height: 1.8;
   animation: fadeUp .9s .35s ease both;
 }
+
 .hero-actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   animation: fadeUp .9s .45s ease both;
 }
-
 /* =============================================
    ABOUT
    ============================================= */
