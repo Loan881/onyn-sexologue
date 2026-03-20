@@ -470,7 +470,11 @@ img { max-width: 100%; display: block; }
   gap: 10px;
 }
 .tarif-card p {
-  margin: 10px:
+  font-family: var(--font-disp);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--brown);
+  margin-bottom: 20px;
 }   
 
 .tarif-card ul li {
