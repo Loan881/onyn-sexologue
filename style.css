@@ -471,10 +471,12 @@ img { max-width: 100%; display: block; }
 }
 .tarif-card p {
   font-family: var(--font-disp);
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--brown);
   margin-bottom: 20px;
+  text-align: left;
+   
 }   
 
 .tarif-card ul li {
