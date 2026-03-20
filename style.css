@@ -426,6 +426,7 @@ img { max-width: 100%; display: block; }
 }
 .tarif-card.featured h3 { color: var(--white); }
 .tarif-card.featured .tarif-duree { color: rgba(255,255,255,.6); }
+.tarif-card.featured p { color: rgba(255,255,255,.8); }
 .tarif-card.featured ul li { color: rgba(255,255,255,.8); }
 .tarif-card.featured ul li::before { color: var(--gold); }
 .tarif-badge {
@@ -468,6 +469,10 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   gap: 10px;
 }
+.tarif-card p {
+  margin: 10px:
+}   
+
 .tarif-card ul li {
   font-size: .88rem;
   color: var(--text-lt);
