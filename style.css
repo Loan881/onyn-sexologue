@@ -297,20 +297,11 @@ img { max-width: 100%; display: block; }
   gap: 80px;
   align-items: center;
 }
-.about-image-wrap { position: relative; }
-.about-image-placeholder {
-  width: 100%;
-  aspect-ratio: 4/5;
-  background: linear-gradient(135deg, var(--beige), #d5c5b0);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-lt);
-  font-size: .85rem;
-  font-style: italic;
-  border: 2px dashed rgba(200,169,110,.4);
+.about-image-wrap { 
+   position: relative;
+   box-shadow: .2s;               
 }
+
 .about-badge {
   position: absolute;
   bottom: -20px; right: -20px;
